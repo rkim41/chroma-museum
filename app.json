@@ -1,0 +1,23 @@
+{
+  "expo": {
+    "name": "Chroma",
+    "slug": "chroma",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "chroma",
+    "userInterfaceStyle": "dark",
+    "splash": { "backgroundColor": "#1A1510" },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.chroma.museum"
+    },
+    "android": {
+      "package": "com.chroma.museum"
+    },
+    "plugins": [
+      "expo-router",
+      ["expo-camera", { "cameraPermission": "Chroma uses the camera to scan museum artwork." }],
+      ["expo-media-library", { "photosPermission": "Chroma saves corrected artwork images.", "savePhotosPermission": "Chroma saves corrected artwork images." }]
+    ]
+  }
+}
