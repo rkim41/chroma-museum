@@ -206,14 +206,14 @@ function correctDeuteranopia(r, g, b, str) {
   var errM = M - Msim;
   var Lc = L;
   var Mc = Msim;
-  var Sc = S + 1.4*errM;
+  var Sc = S + 0.7*errM;
   var rlc =  4.4679*Lc - 3.5873*Mc + 0.1193*Sc;
   var glc = -1.2186*Lc + 2.3809*Mc - 0.1624*Sc;
   var blc =  0.0497*Lc - 0.2439*Mc + 1.2045*Sc;
   var redness = rl - gl;
   var greenness = gl - rl;
-  if (redness > 0.08) { rlc += redness*0.25; glc += redness*0.10; blc -= redness*0.20; }
-  if (greenness > 0.08) { rlc -= greenness*0.20; blc += greenness*0.30; }
+  if (redness > 0.15) { rlc += redness*0.15; glc += redness*0.08; blc -= redness*0.15; }
+  if (greenness > 0.12) { rlc -= greenness*0.20; blc += greenness*0.20; }
   var rFinal = gammaCompress(rlc)*255;
   var gFinal = gammaCompress(glc)*255;
   var bFinal = gammaCompress(blc)*255;
