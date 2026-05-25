@@ -29,7 +29,7 @@ const FILTERS = [
   { id: 'compare', label: 'Compare',   desc: 'Drag to compare original vs corrected' },
 ];
 
-const HISTORY_DIR = `${FileSystem.cacheDirectory}chroma_history/`;
+const HISTORY_DIR = `${FileSystem.cacheDirectory}IRIS_history/`;
 
 export default function HomeScreen() {
   const [cameraPermission, requestCameraPermission] = useCameraPermissions();
@@ -84,7 +84,7 @@ export default function HomeScreen() {
     return (
       <View style={s.centered}>
         <Text style={s.permTitle}>Camera Permission Required</Text>
-        <Text style={s.permDesc}>Chroma needs camera access to scan museum artwork.</Text>
+        <Text style={s.permDesc}>IRIS needs camera access to scan museum artwork.</Text>
         <TouchableOpacity style={s.btn} onPress={requestCameraPermission}>
           <Text style={s.btnText}>Allow Camera</Text>
         </TouchableOpacity>
@@ -311,7 +311,7 @@ img.src = 'data:image/jpeg;base64,${base64Image}';
           <TouchableOpacity onPress={() => { setBase64Image(null); setCapturedUri(null); }}>
             <Text style={s.backBtn}>← Scan</Text>
           </TouchableOpacity>
-          <Text style={s.headerTitle}>CHROMA</Text>
+          <Text style={s.headerTitle}>IRIS</Text>
           <TouchableOpacity onPress={() => { loadHistory(); setShowHistory(true); }}>
             <Text style={s.historyBtn}>History</Text>
           </TouchableOpacity>
@@ -431,7 +431,7 @@ img.src = 'data:image/jpeg;base64,${base64Image}';
 
       {/* Header */}
       <View style={s.header}>
-        <Text style={s.headerTitle}>CHROMA</Text>
+        <Text style={s.headerTitle}>IRIS</Text>
         <View style={s.headerRight}>
           <TouchableOpacity onPress={toggleFlash} style={s.iconBtn}>
             <Text style={s.iconBtnText}>{flashIcon}</Text>
